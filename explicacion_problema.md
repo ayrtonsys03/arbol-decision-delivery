@@ -41,13 +41,17 @@ El problema se resuelve modelando un **Árbol de Decisión** y aplicando el crit
 2. **Cálculo del Valor Esperado (VE)**
    Para cada subopción, el script calcula matemáticamente cuánto dinero se espera ganar en promedio considerando el riesgo de los tres escenarios. La fórmula general para el Valor Esperado es la sumatoria del producto entre la probabilidad de cada evento y su ganancia/pago asociado:
 
-   $$ VE = \sum_{i=1}^{n} (P_i \times V_i) $$
+$$
+VE = \sum_{i=1}^{n} (P_i \times V_i)
+$$
 
    Donde $P_i$ es la probabilidad de que ocurra el escenario $i$, y $V_i$ son las ventas proyectadas en dicho escenario.
 
    Aplicado a nuestro problema específico con 3 escenarios (Buena, Moderada, Pobre), la fórmula expandida que ejecuta automáticamente el sistema es:
 
-   $$ VE = (P_{Buena} \times V_{Buena}) + (P_{Moderada} \times V_{Moderada}) + (P_{Pobre} \times V_{Pobre}) $$
+$$
+VE = (P_{Buena} \times V_{Buena}) + (P_{Moderada} \times V_{Moderada}) + (P_{Pobre} \times V_{Pobre})
+$$
 
 3. **Toma de Decisión Automatizada**
    Una vez calculados los VE de las cuatro subopciones, la aplicación ordena y determina la mejor alternativa para el "Sistema propio", la mejor para "Subcontratar" y, finalmente, la **Decisión Óptima Global**. Para evaluar la opción global, la app prioriza primero el mayor Valor Esperado, usando el menor tiempo de implementación y menor costo como criterios de desempate.
